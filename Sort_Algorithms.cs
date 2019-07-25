@@ -82,5 +82,22 @@ namespace CS_Algorithms
                 }
             }
         }
+        
+        // Пузырьковая сортировка
+        public static void Bubble_Sort<T>(T[] array) where T : IComparable
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                for (int j = array.Length - 1; j >= i + 1; j--)
+                {
+                    if (array[j].CompareTo(array[j - 1]) < 0)
+                    {
+                        T temp = array[j];
+                        array[j] = array[j - 1];
+                        array[j - 1] = temp;
+                    }
+                }
+            }
+        }
     }
 }
